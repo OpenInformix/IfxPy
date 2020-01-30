@@ -13,7 +13,7 @@ class IfxPyTestCase(unittest.TestCase):
 
   def test_060_Tables_01(self):
     obj = IfxPyTestFunctions()
-    obj.assert_expectf(self.run_test_060)
+    obj.assert_expect(self.run_test_060)
 
   def run_test_060(self):
     conn = IfxPy.connect(config.ConnStr, config.user, config.password)

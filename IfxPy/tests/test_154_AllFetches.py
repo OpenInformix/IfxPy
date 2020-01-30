@@ -32,16 +32,16 @@ class IfxPyTestCase(unittest.TestCase):
     server = IfxPy.server_info( conn )
     if (server.DBMS_NAME[0:3] == 'Inf'):
       statement = 'CREATE TABLE fetch_test (col1 VARCHAR(20), col2 CLOB, col3 INTEGER)'
-      st0 = "INSERT INTO fetch_test VALUES ('column 0', 'Data in the clob 0', 0)"
-      st1 = "INSERT INTO fetch_test VALUES ('column 1', 'Data in the clob 1', 1)"
-      st2 = "INSERT INTO fetch_test VALUES ('column 2', 'Data in the clob 2', 2)"
-      st3 = "INSERT INTO fetch_test VALUES ('column 3', 'Data in the clob 3', 3)"
+      st0 = "INSERT INTO fetch_test VALUES ('column 0', FILETOCLOB('C:\\work\\IfxPy\\IfxPy\\tests\\data\\data1.txt','client'), 0)"
+      st1 = "INSERT INTO fetch_test VALUES ('column 1', FILETOCLOB('C:\\work\\IfxPy\\IfxPy\\tests\\data\\data2.txt','client'), 1)"
+      st2 = "INSERT INTO fetch_test VALUES ('column 2', FILETOCLOB('C:\\work\\IfxPy\\IfxPy\\tests\\data\\data3.txt','client'), 2)"
+      st3 = "INSERT INTO fetch_test VALUES ('column 3', FILETOCLOB('C:\\work\\IfxPy\\IfxPy\\tests\\data\\data4.txt','client'), 3)"
     else:
       statement = 'CREATE TABLE fetch_test (col1 VARCHAR(20), col2 CLOB(20), col3 INTEGER)'
-      st0 = "INSERT INTO fetch_test VALUES ('column 0', 'Data in the clob 0', 0)"
-      st1 = "INSERT INTO fetch_test VALUES ('column 1', 'Data in the clob 1', 1)"
-      st2 = "INSERT INTO fetch_test VALUES ('column 2', 'Data in the clob 2', 2)"
-      st3 = "INSERT INTO fetch_test VALUES ('column 3', 'Data in the clob 3', 3)"
+      st0 = "INSERT INTO fetch_test VALUES ('column 0', FILETOCLOB('C:\\work\\IfxPy\\IfxPy\\tests\\data\\data1.txt','client'), 0)"
+      st1 = "INSERT INTO fetch_test VALUES ('column 1', FILETOCLOB('C:\\work\\IfxPy\\IfxPy\\tests\\data\\data2.txt','client'), 1)"
+      st2 = "INSERT INTO fetch_test VALUES ('column 2', FILETOCLOB('C:\\work\\IfxPy\\IfxPy\\tests\\data\\data3.txt','client'), 2)"
+      st3 = "INSERT INTO fetch_test VALUES ('column 3', FILETOCLOB('C:\\work\\IfxPy\\IfxPy\\tests\\data\\data4.txt','client'), 3)"
     result = IfxPy.exec_immediate(conn, statement)
 
     result = IfxPy.exec_immediate(conn, st0)

@@ -29,10 +29,10 @@ class IfxPyTestCase(unittest.TestCase):
 
       if (server.DBMS_NAME[0:3] == 'Inf'):
         create = 'CREATE TABLE table_6755 (col1 VARCHAR(20), col2 CLOB)'
-        insert = "INSERT INTO table_6755 VALUES ('database', 'database')"
+        insert = "INSERT INTO table_6755 VALUES ('database', FILETOCLOB('C:\\work\\IfxPy\\IfxPy\\tests\\data\\test_6755.txt','client'))"
       else:
         create = 'CREATE TABLE table_6755 (col1 VARCHAR(20), col2 CLOB(20))'
-        insert = "INSERT INTO table_6755 VALUES ('database', 'database')"
+        insert = "INSERT INTO table_6755 VALUES ('database', FILETOCLOB('C:\\work\\IfxPy\\IfxPy\\tests\\data\\test_6755.txt','client'))"
       result = IfxPy.exec_immediate(conn, create)
       result = IfxPy.exec_immediate(conn, insert)
       statement = "SELECT col1, col2 FROM table_6755"

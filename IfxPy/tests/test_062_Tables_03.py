@@ -13,7 +13,7 @@ class IfxPyTestCase(unittest.TestCase):
 
   def test_062_Tables_03(self):
     obj = IfxPyTestFunctions()
-    obj.assert_expectf(self.run_test_062)
+    obj.assert_expect(self.run_test_062)
 
   def run_test_062(self):
     conn = IfxPy.connect(config.ConnStr, config.user, config.password)
@@ -90,8 +90,8 @@ class IfxPyTestCase(unittest.TestCase):
 #T/T4/TABLE
 #done!
 #__IDS_EXPECTED__
-#t/t1/TABLE%s
-#t/t2/TABLE%s
-#t/t3/TABLE%s
-#t/t4/TABLE%s
+#t/t1/TABLE
+#t/t2/TABLE
+#t/t3/TABLE
+#t/t4/TABLE
 #done!

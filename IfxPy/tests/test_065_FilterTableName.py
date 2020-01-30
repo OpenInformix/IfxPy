@@ -13,7 +13,7 @@ class IfxPyTestCase(unittest.TestCase):
 
   def test_065_FilterTableName(self):
     obj = IfxPyTestFunctions()
-    obj.assert_expectf(self.run_test_065)
+    obj.assert_expect(self.run_test_065)
 
   def run_test_065(self):
     conn = IfxPy.connect(config.ConnStr, config.user, config.password)
@@ -58,7 +58,7 @@ class IfxPyTestCase(unittest.TestCase):
    
     row = IfxPy.fetch_tuple(result) 
     while ( row ):
-      final = ", " + row[1] + ", " + row[2] + ", " + row[3] + ", , ";
+      final = ", " + row[1] + ", " + row[2] + ", " + row[3] + ", ,";
       row = IfxPy.fetch_tuple(result)
 
     print(final)

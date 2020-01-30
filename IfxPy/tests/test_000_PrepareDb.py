@@ -90,7 +90,7 @@ class IfxPyTestCase(unittest.TestCase):
         return 0
       IfxPy.bind_param(stmt, 1, name, IfxPy.SQL_PARAM_INPUT)
       IfxPy.bind_param(stmt, 2, picture, IfxPy.SQL_PARAM_INPUT)
-#      result = IfxPy.execute(stmt)
+      result = IfxPy.execute(stmt)
 
     # Drop the department table, in case it exists
     drop = 'DROP TABLE department'

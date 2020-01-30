@@ -14,7 +14,7 @@ class IfxPyTestCase(unittest.TestCase):
 
   def test_191_ColumnsTable_02(self):
     obj = IfxPyTestFunctions()
-    obj.assert_expectf(self.run_test_191)
+    obj.assert_expect(self.run_test_191)
 
   def run_test_191(self):
     conn = IfxPy.connect(config.ConnStr, config.user, config.password)

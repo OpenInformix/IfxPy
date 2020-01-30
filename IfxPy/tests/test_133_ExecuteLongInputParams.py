@@ -13,7 +13,7 @@ class IfxPyTestCase(unittest.TestCase):
 
   def test_133_ExecuteLongInputParams(self):
     obj = IfxPyTestFunctions()
-    obj.assert_expectf(self.run_test_133)
+    obj.assert_expect(self.run_test_133)
 
   def run_test_133(self):
     conn = IfxPy.connect(config.ConnStr, config.user, config.password)

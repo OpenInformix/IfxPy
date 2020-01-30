@@ -13,7 +13,7 @@ class IfxPyTestCase(unittest.TestCase):
 
   def test_300_ServerInfo(self):
     obj = IfxPyTestFunctions()
-    obj.assert_expectf(self.run_test_300)
+    obj.assert_expect(self.run_test_300)
 
   def run_test_300(self):
     conn = IfxPy.connect(config.ConnStr, config.user, config.password)

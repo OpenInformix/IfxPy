@@ -33,7 +33,7 @@ class IfxPyTestCase(unittest.TestCase):
       stmt = IfxPy.prepare(conn, "INSERT INTO pictures VALUES (0, ?)")
       
       picture = os.path.dirname(os.path.abspath(__file__)) + "/pic1.jpg"
-      rc = IfxPy.bind_param(stmt, 1, picture, IfxPy.SQL_PARAM_INPUT, IfxPy.SQL_BINARY)
+      rc = IfxPy.bind_param(stmt, 1, picture, IfxPy.SQL_PARAM_INPUT)
     
       rc = IfxPy.execute(stmt)
       
