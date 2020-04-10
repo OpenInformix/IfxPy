@@ -162,6 +162,23 @@ typedef int Py_ssize_t;
 //#define SQL_APPLICATION_CODEPAGE 0
 //#define SQL_CONNECT_CODEPAGE 0
 
+// Note: The below definitions comes from ODBC component of CSDK 4.50.xC1 release i..e INFORMIXDIR\incl\cli\infxcli.h file.
+// Smart trigger feature is supported in Informix CSDK from 4.50.xC1 release onward.
+// The below hard coded values are being used to avoid failure of the Python driver build if any lower version of CSDK is used.
+// The idea is not to fail the build, however in the lower verison (<4.50.xC1) of CSDK at "run time" Smart Trigger will not work.
+// Since the implementation for Smart Trigger is from 4.50.xC1 release onward.
+#define PY_IFMX_OPEN_SMART_TRIGGER              2284 // SQL_INFX_ATTR_OPEN_SMART_TRIGGER
+#define PY_IFMX_JOIN_SMART_TRIGGER              2285 // SQL_INFX_ATTR_JOIN_SMART_TRIGGER
+#define PY_IFMX_GET_LO_FILE_DESC_SMART_TRIGGER  2286 // SQL_INFX_ATTR_GET_LO_FILE_DESC_SMART_TRIGGER
+#define PY_IFMX_GET_SESSION_ID_SMART_TRIGGER    2287 // SQL_INFX_ATTR_GET_SESSION_ID_SMART_TRIGGER
+#define PY_IFMX_REGISTER_SMART_TRIGGER          2288 // SQL_INFX_ATTR_REGISTER_SMART_TRIGGER
+#define PY_IFMX_GET_DATA_SMART_TRIGGER_LOOP     2289 // SQL_INFX_ATTR_GET_DATA_SMART_TRIGGER_LOOP
+#define PY_IFMX_GET_DATA_SMART_TRIGGER_NO_LOOP  2290 // SQL_INFX_ATTR_GET_DATA_SMART_TRIGGER_NO_LOOP
+#define PY_IFMX_DELETE_SMART_TRIGGER            2291 // SQL_INFX_ATTR_DELETE_SMART_TRIGGER
+
+// Currently, it has provision to register 10 smart triggers. Depending on need it could be increased with other relevant code changes in the code.
+#define NUM_OF_SMART_TRIGGER_REGISTRATION 10
+
 // Enum for Decfloat Rounding Modes
 enum
 {
@@ -349,7 +366,7 @@ static void _python_IfxPy_clear_stmt_err_cache(void);
 static void _python_IfxPy_clear_conn_err_cache(void);
 static int _python_get_variable_type(PyObject *variable_value);
 
-
+// ////////////////////////////// from here c ////////////////////////
 static void _python_IfxPy_check_sql_errors(
     SQLHANDLE handle,
     SQLSMALLINT hType,
