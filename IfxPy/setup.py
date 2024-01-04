@@ -24,6 +24,9 @@ from setuptools.command.install import install
 # https://docs.python.org/3.4/distutils/setupscript.html#distutils-installing-scripts
 
 
+print(">>>>>>>> peregrine")
+
+
 PACKAGE   = 'IfxPy'
 VERSION   = '3.0.5'
 VERSION2X = '2.7.1'
