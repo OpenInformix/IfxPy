@@ -986,7 +986,7 @@ static PyObject *_python_IfxPy_register_smart_trigger_helper(PyObject *self, PyO
 				return NULL;
 			}
 
-			objectSize = PyUnicode_GET_DATA_SIZE(tableNameObj);
+			objectSize = PyUnicode_GET_LENGTH(tableNameObj);
 			tableName = (SQLWCHAR *)malloc((int)objectSize*sizeof(SQLWCHAR) + sizeof(SQLWCHAR));
 			if (tableName == NULL)
 			{
@@ -1011,7 +1011,7 @@ static PyObject *_python_IfxPy_register_smart_trigger_helper(PyObject *self, PyO
 				PyErr_SetString(PyExc_Exception, "statement must be a string or unicode");
 				return NULL;
 			}
-			objectSize = PyUnicode_GET_DATA_SIZE(ownerNameObj);
+			objectSize = PyUnicode_GET_LENGTH(ownerNameObj);
 			ownerName = (SQLWCHAR *)malloc((int)objectSize * sizeof(SQLWCHAR) + sizeof(SQLWCHAR));
 			if (ownerName == NULL)
 			{
@@ -1036,7 +1036,7 @@ static PyObject *_python_IfxPy_register_smart_trigger_helper(PyObject *self, PyO
 				PyErr_SetString(PyExc_Exception, "statement must be a string or unicode");
 				return NULL;
 			}
-			objectSize = PyUnicode_GET_DATA_SIZE(dbNameObj);
+			objectSize = PyUnicode_GET_LENGTH(dbNameObj);
 			dbName = (SQLWCHAR *)malloc((int)objectSize * sizeof(SQLWCHAR) + sizeof(SQLWCHAR));
 			if (dbName == NULL)
 			{
@@ -1061,7 +1061,7 @@ static PyObject *_python_IfxPy_register_smart_trigger_helper(PyObject *self, PyO
 				PyErr_SetString(PyExc_Exception, "statement must be a string or unicode");
 				return NULL;
 			}
-			objectSize = PyUnicode_GET_DATA_SIZE(sqlQueryObj);
+			objectSize = PyUnicode_GET_LENGTH(sqlQueryObj);
 			sqlQuery = (SQLWCHAR *)malloc((int)objectSize * sizeof(SQLWCHAR) + sizeof(SQLWCHAR));
 			if (sqlQuery == NULL)
 			{
@@ -1086,7 +1086,7 @@ static PyObject *_python_IfxPy_register_smart_trigger_helper(PyObject *self, PyO
 				PyErr_SetString(PyExc_Exception, "Statement must be a string or unicode");
 				return NULL;
 			}
-			objectSize = PyUnicode_GET_DATA_SIZE(labelObj);
+			objectSize = PyUnicode_GET_LENGTH(labelObj);
 			label = (SQLWCHAR *)malloc((int)objectSize * sizeof(SQLWCHAR) + sizeof(SQLWCHAR));
 			if (label == NULL)
 			{
