@@ -10,7 +10,7 @@
 // Unless required by applicable law or agreed to in writing, software
 // distributed under the License is distributed on an "AS IS" BASIS,
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
+// See the License for the specific language governing permissions andbbbbbbbb
 // limitations under the License.
 //
 /*
@@ -5966,7 +5966,7 @@ static int _python_IfxPy_bind_data(stmt_handle *stmt_res, param_node *curr, PyOb
         rc = SQLBindFileToParam((SQLHSTMT)stmt_res->hstmt, curr->param_num,
                                 curr->data_type, (SQLCHAR*)curr->svalue,
                                 (SQLSMALLINT*)&(curr->ivalue), &(curr->file_options),
-                                curr->ivalue, &(curr->bind_indicator));
+                                curr->ivalue, (SQLINTEGER*)&(curr->bind_indicator));
         Py_END_ALLOW_THREADS;
 
         if (rc == SQL_ERROR || rc == SQL_SUCCESS_WITH_INFO)
@@ -7516,7 +7516,7 @@ static PyObject *IfxPy_get_num_result(PyObject *self, PyObject *args)
     PyObject *py_stmt_res = NULL;
     stmt_handle *stmt_res;
     int rc = 0;
-    SQLINTEGER count = 0;
+    SQLLEN count = 0;
     char error [DB_MAX_ERR_MSG_LEN];
     SQLSMALLINT strLenPtr;
 
@@ -11375,7 +11375,7 @@ static PyObject* IfxPy_execute_many(PyObject *self, PyObject *args)
     SQLSMALLINT numOpts = 0;
     int numOfRows = 0;
     int numOfParam = 0;
-    SQLINTEGER row_cnt = 0;
+    SQLLEN row_cnt = 0;
     int chaining_start = 0;
 
     SQLSMALLINT *data_type;
